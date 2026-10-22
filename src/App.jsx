@@ -38,7 +38,7 @@ export default function App() {
 const [isLoading, setIsLoading] = useState(true);
 
 useEffect(() => {
-  fetch('http://localhost:8080/api/employees')
+  fetch('https://employee-management-backend-yb0m.onrender.com/api/employees')
     .then((response) => {
       if (!response.ok) {
         throw new Error('Failed to fetch employees');
@@ -159,9 +159,9 @@ useEffect(() => {
     try {
       const isEditing = Boolean(employeeToEdit);
 
-      const url = isEditing
-        ? `http://localhost:8080/api/employees/${employeeToEdit.id}`
-        : 'http://localhost:8080/api/employees';
+     const url = isEditing
+  ? `https://employee-management-backend-yb0m.onrender.com/api/employees/${employeeToEdit.id}`
+  : 'https://employee-management-backend-yb0m.onrender.com/api/employees';
 
       const response = await fetch(url, {
         method: isEditing ? 'PUT' : 'POST',
@@ -214,7 +214,7 @@ useEffect(() => {
 
     try {
       const response = await fetch(
-        `http://localhost:8080/api/employees/${id}`,
+        `https://employee-management-backend-yb0m.onrender.com/api/employees/${id}`,
         {
           method: 'DELETE',
         }
